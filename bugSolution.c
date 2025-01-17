@@ -1,0 +1,1 @@
+/*This version addresses the potential error. The error is not directly obvious.  It relates to the fact that you may be unintentionally modifying the content of x. */ #include <stdio.h> int main() { int x = 10; int *ptr = &x; /* The bug is in the next line. */ if (ptr != NULL) {  *ptr = 20; } printf("%d\n", x); return 0; }
